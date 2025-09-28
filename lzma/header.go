@@ -58,7 +58,7 @@ func putUint64LE(b []byte, x uint64) {
 const noHeaderSize uint64 = 1<<64 - 1
 
 // HeaderLen provides the length of the LZMA file header.
-const HeaderLen = 13
+const HeaderLen = 5
 
 // Header represents the Header of an LZMA file.
 type Header struct {
@@ -119,17 +119,7 @@ func (h *Header) unmarshalBinary(data []byte) error {
 	}
 
 	// uncompressed size
-	s := uint64LE(data[5:])
-	if s == noHeaderSize {
-		h.Size = -1
-	} else {
-		h.Size = int64(s)
-		if h.Size < 0 {
-			return errors.New(
-				"LZMA header: uncompressed size " +
-					"out of int64 range")
-		}
-	}
+	h.Size = -1
 
 	return nil
 }
