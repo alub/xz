@@ -1,3 +1,3 @@
-module github.com/ulikunitz/xz
+module github.com/alub/xz
 
 go 1.20

@@ -7,7 +7,7 @@
 // Use gxz -h to get information about supported flags.
 package main
 
-//go:generate xb cat -o licenses.go xzLicense:github.com/ulikunitz/xz/LICENSE goLicense:~/go/LICENSE
+//go:generate xb cat -o licenses.go xzLicense:github.com/alub/xz/LICENSE goLicense:~/go/LICENSE
 //go:generate xb version-file -o version.go
 
 import (
@@ -19,9 +19,9 @@ import (
 	"strings"
 	"text/template"
 
-	"github.com/ulikunitz/xz/internal/gflag"
-	"github.com/ulikunitz/xz/internal/term"
-	"github.com/ulikunitz/xz/internal/xlog"
+	"github.com/alub/xz/internal/gflag"
+	"github.com/alub/xz/internal/term"
+	"github.com/alub/xz/internal/xlog"
 )
 
 const (
